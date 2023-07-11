@@ -1,0 +1,9 @@
+The spread operator (...) is used in this code to create a new array from the words array.
+
+Although words is already an array after splitting the text content, using the spread operator [...words] creates a new array with the same elements as words. This is done to ensure that the length of the array is correctly determined.
+
+Code attempted to use a regular expression and 
+matchAll() to match all words in the text content. 
+
+However, --------matchAll() returns an iterator, not an array, and to get the length of the iterator, it needs to be converted into an array first. That's why the spread operator is used to convert the iterator to an array, and then the length of the array is determined with [...words].length.
+
