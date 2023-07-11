@@ -20,8 +20,13 @@ if (article) {
   const badge = document.createElement("p");
 
   // Use the same styling as the publish information in an article's header
+
   badge.classList.add("color-secondary-text", "type--caption");
   badge.textContent = `⏱️ ${readingTime} min read @ReadingTime`;
+  badge.style.backgroundColor = "yellow";
+  badge.style.color = "green";
+  badge.style.padding = "10px";
+  badge.style.borderRadius = "10px";
 
   // Support for API reference docs
   const heading =
