@@ -26,7 +26,11 @@ if (article) {
   // Use the same styling as the publish information in an article's header
 
   badge.classList.add("color-secondary-text", "type--caption");
-  badge.textContent = `⏱️ ${readingTime} min read @ReadingTime`;
+  if (readingTime === 0) {
+    badge.textContent = `⏱️ less than 1 min read @ReadingTime`;
+  } else {
+    badge.textContent = `⏱️ ${readingTime} min read @ReadingTime`;
+  }
   badge.style.backgroundColor = "yellow";
   badge.style.color = "green";
   badge.style.padding = "10px";
@@ -39,4 +43,16 @@ if (article) {
   // Support for article docs with date
   const date = article.querySelector("time")?.parentNode;
   (date ?? heading).insertAdjacentElement("afterend", badge);
+
+  // Insert the message as the first child of the <body> element
+  const additionalDiv =
+    document.createElement("div") || document.createElement("p");
+  if (readingTime === 0) {
+    additionalDiv.textContent = `⏱️ less than 1 min read @ReadingTime`;
+  } else {
+    additionalDiv.textContent = `⏱️ ${readingTime} min read @ReadingTime`;
+  }
+  additionalDiv.style.textAlign = "center";
+  additionalDiv.style.textDecorationLine = "underline";
+  document.body.insertBefore(additionalDiv, document.body.firstChild);
 }
