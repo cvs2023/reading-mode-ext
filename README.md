@@ -1,6 +1,6 @@
 # reading-mode-ext
 
-In this extension if calculated the read time based on the words present on the webpage inside article or section tag.
+This extension calculates the read time based on the words present on the webpage inside article or section tag.
 Its working perfectly for medium articles.
 
 # Future Changes
